@@ -1,0 +1,52 @@
+# RuboCop configuration for Bowling Game project
+# Follows Ruby community best practices with some project-specific adjustments
+
+require:
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+
+# Layout and formatting
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns: ['(\A|\s)#']
+
+# Documentation requirements
+Style/Documentation:
+  Enabled: false # Allow classes without top-level documentation for this project
+
+# Metrics
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'Rakefile'
+
+Metrics/ModuleLength:
+  Max: 200
+
+# RSpec specific configurations
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/NestedGroups:
+  Max: 4
+
+# Style preferences
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+# Naming
+Naming/MethodParameterName:
+  MinNameLength: 1 # Allow single letter parameters like 't' for tests
