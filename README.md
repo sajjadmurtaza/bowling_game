@@ -59,5 +59,3 @@ lib/bowling_game.rb              # Main entry point
 - **10th Frame**: Special rules allow up to 3 rolls
 
 ---
-
-Professional Ruby implementation following SOLID principles with comprehensive test coverage.
